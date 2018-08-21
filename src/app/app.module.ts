@@ -11,7 +11,11 @@ import { ArtistComponent } from './components/artist/artist.component';
 import { NavbarComponent } from './components/sared/navbar/navbar.component';
 
 // Importar rutas
-import { ROUTES} from './app.routes'
+import { ROUTES} from './app.routes';
+
+// Pipes
+import { NoimagePipe } from './pipes/noimage.pipe';
+import { CardsComponent } from './components/sared/cards/cards.component'
 
 
 @NgModule({
@@ -20,7 +24,9 @@ import { ROUTES} from './app.routes'
     HomeComponent,
     SearchComponent,
     ArtistComponent,
-    NavbarComponent
+    NavbarComponent,
+    NoimagePipe,
+    CardsComponent
   ],
   imports: [
     BrowserModule,

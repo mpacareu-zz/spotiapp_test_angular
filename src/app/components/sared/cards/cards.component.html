@@ -1,9 +1,22 @@
-<div class="card-columns">
-    <div class="card" *ngFor='let item of items'>
-        <img class="card-img-top" [src]="item.images | noimage" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">{{item.name}}</h5>
-            <span *ngFor='let artist of item.artists' class="badge badge-pill badge-dark">{{artist.name}}</span>
-        </div>
+<div class="card-columns m-5 animated fadeIn">
+    <div *ngFor='let item of items'>
+        <div *ngIf="item.type === 'album'; then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock>
+            <div class="card">
+                <img class="card-img-top" [src]="item.images | noimage" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{item.name}}</h5>
+                    <span (click)="viewArtist(item)" *ngFor='let artist of item.artists' class="badge badge-pill badge-dark puntero">{{artist.name}}</span>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template #elseBlock>
+            <div (click)="viewArtist(item)" class="card puntero">
+                <img class="card-img-top" [src]="item.images | noimage" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{item.name}}</h5>
+                    <span *ngFor='let genre of item.genres' class="badge badge-pill badge-dark">{{genre}}</span>
+                </div>
+            </div>
+        </ng-template>
     </div>
-</div>

@@ -14,7 +14,7 @@ export class SearchComponent {
   search(pattern: string) {
     if (pattern.length > 0) {
       this.loading = true;
-      this.spotifyService.getArtist(pattern).subscribe((data: any) => {
+      this.spotifyService.getArtists(pattern).subscribe((data: any) => {
         this.artists = data;
         this.loading = false;
       });

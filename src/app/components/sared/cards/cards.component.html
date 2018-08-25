@@ -6,7 +6,7 @@
                 <img class="card-img-top" [src]="item.images | noimage" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">{{item.name}}</h5>
-                    <span (click)="viewArtist(item)" *ngFor='let artist of item.artists' class="badge badge-pill badge-dark puntero">{{artist.name}}</span>
+                    <span (click)="viewArtist(artist)" *ngFor='let artist of item.artists' class="badge badge-pill badge-dark puntero">{{artist.name}}</span>
                 </div>
             </div>
         </ng-template>

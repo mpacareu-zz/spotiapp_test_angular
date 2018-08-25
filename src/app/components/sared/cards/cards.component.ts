@@ -14,15 +14,7 @@ export class CardsComponent {
 
   viewArtist(item: any) {
     console.log (item);
-    let artistId;
-    if (item.type === 'artist') {
-      artistId = item.id;
-
-    }
-    if (item.type === 'album') {
-      artistId = item.artists[0].id;
-
-    }
+    let artistId = item.id;
     this.router.navigate (['/artist', artistId]);
 
   }

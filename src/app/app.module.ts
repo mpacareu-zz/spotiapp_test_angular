@@ -15,6 +15,9 @@ import { ROUTES} from './app.routes';
 
 // Pipes
 import { NoimagePipe } from './pipes/noimage.pipe';
+import { DomseguroPipe } from './pipes/domseguro.pipe';
+
+
 import { CardsComponent } from './components/sared/cards/cards.component';
 import { LoadingComponent } from './components/sared/loading/loading.component';
 
@@ -29,6 +32,7 @@ import { LoadingComponent } from './components/sared/loading/loading.component';
     NoimagePipe,
     CardsComponent,
     LoadingComponent,
+    DomseguroPipe
   ],
   imports: [
     BrowserModule,
